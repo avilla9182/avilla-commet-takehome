@@ -78,3 +78,11 @@ jobs:
       - name: Run Tests
         run: |
           helm test hello-world --namespace default
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v3
+      - name: Run Tests
+        run: |
+          ./scripts/test-deployment.sh
