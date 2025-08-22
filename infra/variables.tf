@@ -4,6 +4,18 @@ variable "do_token" {
   sensitive   = true
 }
 
+variable "aws_region" {
+  description = "AWS region for EKS cluster"
+  type        = string
+  default     = "us-west-2"
+}
+
+variable "subnet_ids" {
+  description = "Subnet IDs for EKS cluster"
+  type        = list(string)
+  default     = []
+}
+
 variable "cluster_name" {
   description = "Name for the Kubernetes cluster"
   type        = string
